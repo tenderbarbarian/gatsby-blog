@@ -16,9 +16,12 @@
 	"dependencies": {
 		"@contentful/rich-text-react-renderer": "^13.4.0",
 		"gatsby": "^2.18.12",
+		"gatsby-plugin-manifest": "^2.2.41",
+		"gatsby-plugin-offline": "^3.0.35",
 		"gatsby-plugin-react-helmet": "^3.1.18",
 		"gatsby-plugin-sass": "^2.1.26",
 		"gatsby-plugin-sharp": "^2.3.10",
+		"gatsby-plugin-typography": "^2.3.22",
 		"gatsby-remark-images": "^3.1.39",
 		"gatsby-remark-relative-images": "^0.2.3",
 		"gatsby-source-contentful": "^2.1.73",
@@ -27,7 +30,10 @@
 		"node-sass": "^4.13.0",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
-		"react-helmet": "^5.2.1"
+		"react-helmet": "^5.2.1",
+		"react-typography": "^0.16.19",
+		"typography": "^0.16.19",
+		"typography-theme-parnassus": "^0.16.19"
 	},
 	"devDependencies": {
 		"env-cmd": "^10.0.1",

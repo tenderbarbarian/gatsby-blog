@@ -3,7 +3,7 @@ title: "React is best with?"
 date: "2019-11-04"
 ---
 
-![Grass](./grass.jpg)
+![Blog](./blog.jpg)
 ## 
 
 1. Create React App
