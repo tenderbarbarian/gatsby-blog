@@ -51,18 +51,25 @@ module.exports = {
 				pathToConfigModule: `src/utils/typography`
 			}
 		},
-		// {
-		// 	resolve: `gatsby-plugin-manifest`,
-		// 	options: {
-		// 		name: `KatarzynaPohl-Portfolio`,
-		// 		short_name: `pohl`,
-		// 		start_url: `/`,
-		// 		background_color: `#663399`,
-		// 		theme_color: `#663399`,
-		// 		display: `minimal-ui`,
-		// 		icon: `src/images/favicon.png` // This path is relative to the root of the site.
-		// 	}
-		// },
+		{
+			resolve: `gatsby-plugin-nprogress`,
+			options: {
+				color: `red`,
+				showSpinner: false
+			}
+		},
+		{
+			resolve: `gatsby-plugin-manifest`, //Needs to come before offline plugin
+			options: {
+				name: `KatarzynaPohl-Portfolio`,
+				short_name: `pohl`,
+				start_url: `/`,
+				background_color: `#663399`,
+				theme_color: `#663399`,
+				display: `minimal-ui`,
+				icon: `src/images/favicon.png` // This path is relative to the root of the site.
+			}
+		},
 		`gatsby-plugin-offline`
 	]
 };
