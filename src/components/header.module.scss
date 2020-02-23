@@ -1,9 +1,10 @@
 .nav-item {
 	color: #999;
-	font-size: .9rem;
+	font-size: 1.3rem;
 	margin-right: 1.3rem;
 	text-decoration: none;
 	text-transform: uppercase;
+	font-weight: bold;
 }
 .nav-item:hover {
 	color: #666;
@@ -19,6 +20,11 @@
 	@media (min-width: 600px) {
 		flex-direction: row;
 	}
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+	//sticky
+	position: sticky;
+	top: 0;
+	z-index: 100; /* this is optional and should be different for every project */
 }
 
 .title {
