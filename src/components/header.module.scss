@@ -11,20 +11,23 @@
 }
 
 .header {
+	//sticky
+	position: fixed;
+	top: 0;
+	z-index: 100; /* this is optional and should be different for every project */
 	display: flex;
+	flex-grow: 1;
+	min-width: 100vw;
+	max-height: 90px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem 0 1rem 0;
-	border: 1px solid red;
+	padding: 1rem 1rem 0 1rem;
 	@media (min-width: 600px) {
 		flex-direction: row;
 	}
 	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-	//sticky
-	position: sticky;
-	top: 0;
-	z-index: 100; /* this is optional and should be different for every project */
+	background-color: white;
 }
 
 .title {

@@ -1,7 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	overflow-x: hidden;
+}
+
 html {
 	background-color: white;
+	box-sizing: border-box;
 }
 
 a {
 	text-decoration: none;
+}
+
+p {
+	margin: 0;
 }
