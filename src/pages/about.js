@@ -7,8 +7,8 @@ const AboutPage = () => (
 	<Layout>
 		<Head title="About" />
 		<div>
-			<h1>about page</h1>
-			<p>venni viddi vicci! I'm the author of this blog. I know react, gatsby CRa graphql typescript</p>
+			<p>This site is about soft-skills, mindfulness and habit creation</p>
+			<p>Inspited by Sam Harris, Leo Baubata and Olivia Fox Cabane</p>
 			<Link to="/contact">Contact me</Link>
 		</div>
 	</Layout>

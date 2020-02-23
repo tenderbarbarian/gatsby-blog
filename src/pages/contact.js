@@ -9,7 +9,6 @@ const ContactPage = () => (
 			<a href="http://twitter.com" target="_blank" rel="noopener noreferrer">
 				My Twitter
 			</a>
-			<p>Contact from:</p>
 		</div>
 	</Layout>
 );

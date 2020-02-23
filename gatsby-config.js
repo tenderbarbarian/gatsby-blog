@@ -1,13 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
 	/* Your site config here */
 	siteMetadata: {
-		title: 'MyFirstGatsby&GraphQL',
+		title: 'Headless',
 		author: 'Kasia Pohl'
 	},
 	plugins: [
@@ -61,8 +55,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`, //Needs to come before offline plugin
 			options: {
-				name: `KatarzynaPohl-Portfolio`,
-				short_name: `pohl`,
+				name: `Headless`,
+				short_name: `headless`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,
