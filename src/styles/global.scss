@@ -1,4 +1,10 @@
-* {
+@import './variables.scss';
+
+*,
+*:before,
+*:after,
+ul,
+li {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -14,8 +20,17 @@ html {
 
 a {
 	text-decoration: none;
+	color: $dark-grey;
 }
 
 p {
 	margin: 0;
+}
+
+h1 {
+	// font-weight: 800;
+	span {
+		font-weight: lighter;
+		color: rgba(0, 0, 0, 0.9);
+	}
 }

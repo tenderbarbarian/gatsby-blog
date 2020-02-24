@@ -1,3 +1,5 @@
+@import '../styles/components.scss';
+
 .container {
 	display: flex;
 	flex-grow: 1;
@@ -7,11 +9,4 @@
 	min-width: 100vw;
 	min-width: 100%;
 	// border: 3px dashed blue;
-}
-
-.content {
-	flex-grow: 1;
-	padding: 1rem;
-	margin-top: 120px;
-	// border: 2px solid orange;
 }

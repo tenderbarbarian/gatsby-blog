@@ -1,13 +1,17 @@
+@import '../styles/variables.scss';
+@import '../styles/components.scss';
+
 .nav-item {
-	color: #999;
-	font-size: 1.3rem;
+	color: black;
+	font-size: 1rem;
+	margin: 0;
 	margin-right: 1.3rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 .nav-item:hover {
-	color: #666;
+	color: $light-grey;
 }
 
 .header {
@@ -17,16 +21,26 @@
 	z-index: 100; /* this is optional and should be different for every project */
 	display: flex;
 	flex-grow: 1;
+	flex-basis: auto;
 	min-width: 100vw;
-	max-height: 90px;
+	height: 100%;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem 1rem 0 1rem;
-	@media (min-width: 600px) {
+	max-height: 140px;
+	padding: 1rem;
+	@media (min-width: $header-breakpoint) {
+		padding: 1rem 2rem 0 4rem;
+		max-height: 90px;
 		flex-direction: row;
 	}
-	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+	@media (min-width: 1000px) {
+		padding: 1rem 7rem 0 8rem;
+		max-height: 90px;
+		flex-direction: row;
+	}
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+	// background-color: #f4f4f4;
 	background-color: white;
 }
 
@@ -34,14 +48,19 @@
 	color: #000;
 	font-size: 3rem;
 	text-decoration: none;
+	padding-top: 1rem;
+	@media (min-width: $header-breakpoint) {
+		padding: 0;
+	}
 }
 
 .nav-list {
 	display: flex;
 	list-style-type: none;
-	margin: 0;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
 }
 
 .active-nav-item {
-	color: #333;
+	color: $dark-grey;
 }
