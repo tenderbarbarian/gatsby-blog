@@ -1,13 +1,58 @@
 @import './variables.scss';
 
 .content {
+	position: relative;
 	flex-grow: 1;
 	width: 100%;
 	padding: $s-size;
-	margin-top: 160px;
+	margin-top: 230px;
 	max-width: 850px;
-	@media (min-width: $header-breakpoint) {
+	@media (min-width: 900px) {
 		margin-top: 110px;
 		padding: $s-size $m-size $l-size $m-size;
+	}
+
+	overflow-y: hidden;
+}
+
+.sectionHeader {
+	display: flex;
+	align-self: flex-end;
+	justify-content: flex-end;
+}
+
+.linkButton {
+	outline: none;
+	border: 0 none;
+	color: white;
+	padding: .8rem 2rem;
+	margin: 1rem 1.5rem 1rem 0;
+	border-radius: 3px;
+	text-decoration: none;
+	background: $primary-color;
+	font-size: $s-size;
+	// box-shadow: 0 10px 8px -6px rgba(0, 0, 0, 0.37);
+	&:hover {
+		background: lighten($color:$primary-color, $amount: 20%);
+		background-position: right center;
+	}
+}
+
+.borderButton {
+	background: none;
+	outline: none;
+	border: 2px solid $primary-color;
+	color: $primary-color;
+	// color: lighten($primary-color, 10%);
+	padding: .7rem 1.9rem;
+	margin: 1rem 1.5rem 1rem 0;
+	border-radius: 3px;
+	text-decoration: none;
+	font-size: $s-size;
+	// box-shadow: 0 10px 8px -6px rgba(0, 0, 0, 0.37);
+	&:hover {
+		background: $secondary-color;
+		background-position: right center;
+		color: white;
 	}
 }

@@ -14,10 +14,13 @@ const Footer = () => {
 	`);
 	return (
 		<footer className={footerStyles.footer}>
-			<p>
-				Created by: {data.site.siteMetadata.author} © {new Date().getFullYear()}
-			</p>
-			<Link to="/rss.xml">RSS feed</Link>
+			{/* <div className={footerStyles.footerBG} /> */}
+			<span>
+				Created by: <strong>{data.site.siteMetadata.author}</strong> © {new Date().getFullYear()}
+			</span>
+			<div className={footerStyles.rss}>
+				<Link to="/rss.xml">RSS feed</Link>
+			</div>
 		</footer>
 	);
 };

@@ -1,5 +1,5 @@
 @import './variables.scss';
-
+@import './reset.scss';
 *,
 *:before,
 *:after,
@@ -11,26 +11,87 @@ li {
 }
 body {
 	overflow-x: hidden;
+	height: 100%;
 }
 
 html {
 	background-color: white;
 	box-sizing: border-box;
+	min-height: 100%;
 }
 
 a {
 	text-decoration: none;
-	color: $dark-grey;
+	color: $primary-color;
 }
 
 p {
 	margin: 0;
+	margin-bottom: 1rem;
 }
 
 h1 {
 	// font-weight: 800;
+	font-size: $xl-size;
 	span {
 		font-weight: lighter;
 		color: rgba(0, 0, 0, 0.9);
+	}
+}
+
+footer {
+	// font-weight: 800;
+	font-size: .8rem;
+	// font-weight: lighter;
+	color: rgba(0, 0, 0, 0.9);
+	span {
+	}
+}
+
+blockquote {
+	position: relative;
+	background: $light-grey;
+	border-left: 10px solid $secondary-color;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+	// color: $primary-color;
+	content: open-quote;
+	font-size: 6em;
+	line-height: 0.1em;
+	vertical-align: -0.4em;
+}
+blockquote p {
+	display: inline;
+}
+
+cite {
+	display: block;
+	// margin-left: 2rem;
+	position: relative;
+	text-align: right;
+	margin-top: 5px;
+	color: $dark-grey;
+	i {
+		position: relative;
+		padding-left: 5px;
+		font-style: italic;
+		background: $light-grey;
+		z-index: 5;
+		&::before {
+			display: block;
+			content: "";
+			position: absolute;
+			// margin-left: 2rem;
+			top: 50%;
+			left: -70px;
+			width: 60px;
+			height: 1px;
+			overflow: hidden;
+			background: #ccc;
+			z-index: 1;
+		}
 	}
 }
