@@ -27,11 +27,9 @@
 	color: white;
 	padding: .8rem 2rem;
 	margin: 1rem 1.5rem 1rem 0;
-	border-radius: 3px;
 	text-decoration: none;
 	background: $primary-color;
 	font-size: $s-size;
-	// box-shadow: 0 10px 8px -6px rgba(0, 0, 0, 0.37);
 	&:hover {
 		background: lighten($color:$primary-color, $amount: 20%);
 		background-position: right center;
@@ -43,13 +41,10 @@
 	outline: none;
 	border: 2px solid $primary-color;
 	color: $primary-color;
-	// color: lighten($primary-color, 10%);
 	padding: .7rem 1.9rem;
 	margin: 1rem 1.5rem 1rem 0;
-	border-radius: 3px;
 	text-decoration: none;
 	font-size: $s-size;
-	// box-shadow: 0 10px 8px -6px rgba(0, 0, 0, 0.37);
 	&:hover {
 		background: $secondary-color;
 		background-position: right center;

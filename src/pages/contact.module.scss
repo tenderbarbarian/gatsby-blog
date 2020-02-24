@@ -1,1 +1,78 @@
 @import '../styles/components.scss';
+@import '../styles/variables.scss';
+
+$form-indentation: 6rem;
+$desktop-breakpoint: 640px;
+.form {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(255, 255, 255, .15);
+	padding: $m-size;
+	@media (min-width: 800px) {
+		padding: 0 $l-size 0 $l-size;
+	}
+	label {
+		// min-width: $form-indentation;
+		// padding: 0 1rem 0 0;
+		//.visuallyhidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		//   }
+	}
+	button {
+		margin-right: 0;
+		@media (min-width: $desktop-breakpoint) {
+			margin-right: 1rem;
+		}
+	}
+	a {
+		display: inline-block;
+		margin: 0;
+	}
+}
+.errorMessage {
+	color: $primary-color;
+	font-style: italic;
+	margin: 0;
+	font-size: .8rem;
+}
+
+.formEntry {
+	display: flex;
+	padding: 4px 0;
+	justify-content: space-between;
+	flex-grow: 1;
+	font-size: 1rem;
+	flex-direction: column;
+	@media (min-width: $desktop-breakpoint) {
+		flex-direction: row;
+	}
+}
+
+.formInput {
+	flex-grow: 2;
+	font-size: 1rem;
+	margin: 0;
+	outline: none;
+	background-color: $light-grey;
+	border: none;
+	padding: 6px 1rem;
+}
+
+.submitContainer {
+	margin: $s-size 0 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	@media (min-width: $desktop-breakpoint) {
+		margin: 0;
+		flex-direction: row;
+		align-items: center;
+	}
+}

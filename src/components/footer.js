@@ -14,7 +14,6 @@ const Footer = () => {
 	`);
 	return (
 		<footer className={footerStyles.footer}>
-			{/* <div className={footerStyles.footerBG} /> */}
 			<span>
 				Created by: <strong>{data.site.siteMetadata.author}</strong> © {new Date().getFullYear()}
 			</span>

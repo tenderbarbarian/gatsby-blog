@@ -26,13 +26,15 @@ const AboutPage = () => (
 			<p>
 				Blogging has always been a fun way to improve myself. I can't just post things I'm not certain about -
 				every* post requires further investigation, additional reflection and a reasonable amount of certainty
-				in terms of quality before hitting that "Publish" button.{' '}
-				<blockquote>
-					If you want to master something, teach it.
-					<cite>
-						<i>Richard Feynman</i>
-					</cite>
-				</blockquote>
+				in terms of quality before hitting that "Publish" button.
+			</p>
+			<blockquote>
+				If you want to master something, teach it.
+				<cite>
+					<i>Richard Feynman</i>
+				</cite>
+			</blockquote>
+			<p>
 				I'm a huge fan of open source software, hence trying to contribute as much as possible. You can find all
 				my contributions on my GitHub profile. Outside the world of software it's likely to find me playing
 				games, spending time with my family and friends or trying to stop my cat from going insane. * = Mostly.
