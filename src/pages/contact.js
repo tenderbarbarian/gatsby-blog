@@ -133,13 +133,13 @@ const ContactForm = () => {
 		e.preventDefault();
 
 		formElemRef.current.setAttribute('loading', true);
-		captchaRef.current.execute();
+		// captchaRef.current.execute(); //only works for invisible captcha
 	};
 
 	return (
 		<form ref={formElemRef} onSubmit={handleFormSubmit}>
-			<input name="name" ref={register({ required: true })} />
 			{errors.name && <p>Required</p>}
+			<input name="name" ref={register({ required: 'Required' })} />
 			<button>Submit</button>
 			<ReCaptcha
 				badge="inline"
