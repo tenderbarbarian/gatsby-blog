@@ -14,10 +14,18 @@ const ContactForm = () => {
 	};
 
 	return (
-		// <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-		// <input type="hidden" name="bot-field" />
-		// <input type="hidden" name="form-name" value="contact" />
-		<form onSubmit={handleSubmit(onSubmit)} className={contactStyles.form}>
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className={contactStyles.form}
+			name="contact"
+			method="post"
+			data-netlify="true"
+			data-netlify-honeypot="bot-field"
+			data-netlify-recaptcha="true"
+			action="/thanks"
+		>
+			<input type="hidden" name="bot-field" />
+			<input type="hidden" name="form-name" value="contact" />
 			{errors.firstName && <span className={contactStyles.errorMessage}>First name is required</span>}
 			<div className={contactStyles.formEntry}>
 				<input
@@ -64,6 +72,7 @@ const ContactForm = () => {
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
 			<div className={contactStyles.submitContainer}>
+				<div data-netlify-recaptcha="true" />
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
 				</button>

@@ -4,14 +4,14 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import homeStyles from './home.module.scss';
 
-const NotFound = () => (
+const Thanks = () => (
 	<Layout>
-		<Head title="404" />
-		<h1 className={homeStyles.sectionHeader}>Page not found</h1>
+		<Head title="Thanks" />
+		<h1 className={homeStyles.sectionHeader}>Your form submission was recieved. Thank you!</h1>
 		<p>
 			<Link to="/">Back to the home page</Link>
 		</p>
 	</Layout>
 );
 
-export default NotFound;
+export default Thanks;
