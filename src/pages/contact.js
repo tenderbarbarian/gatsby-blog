@@ -39,6 +39,8 @@ const ContactForm = () => {
 			className={contactStyles.form}
 			name="contact"
 			method="post"
+			netlify
+			netlify-honeypot="bot-field"
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
 			data-netlify-recaptcha="true"
