@@ -12,18 +12,19 @@ const encode = (data) => {
 const ContactForm = () => {
 	const { register, handleSubmit, errors } = useForm();
 	const [ feedbackMsg, setFeedbackMsg ] = useState(null);
+	const [ captcha, setCaptcha ] = useState(null);
 	const onSubmit = (data, e) => {
 		e.preventDefault();
-		const { name, email, text, myCaptcha } = data;
-		alert(JSON.stringify(myCaptcha));
-		console.log(JSON.stringify(data));
+		const { name, email, text } = data;
+		//alert(JSON.stringify(myCaptcha));
+		console.log(JSON.stringify(captcha));
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: encode({
 				// 'form-name': form.getAttribute('name'),
 				'form-name': 'contact',
-				'g-recaptcha-response': myCaptcha,
+				'g-recaptcha-response': captcha,
 				...data
 			})
 		})
@@ -38,9 +39,9 @@ const ContactForm = () => {
 			});
 		// e.target.reset(); // reset after form submit
 	};
-	// const handleRecaptcha = (value) => {
-	// 	this.setState({ 'g-recaptcha-response': value });
-	// };
+	const handleCaptcha = (value) => {
+		setCaptcha({ 'g-recaptcha-response': value });
+	};
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
@@ -101,7 +102,7 @@ const ContactForm = () => {
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
 			{feedbackMsg && <h3>{feedbackMsg}</h3>}
-			<Recaptcha name="myCaptcha" ref={register({ required: 'Required' })} sitekey={RECAPTCHA_KEY} />
+			<Recaptcha ref="recaptcha" onChange={handleCaptcha} sitekey={RECAPTCHA_KEY} />
 			<div className={contactStyles.submitContainer}>
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
