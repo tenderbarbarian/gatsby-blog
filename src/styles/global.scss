@@ -12,6 +12,7 @@ li {
 body {
 	overflow-x: hidden;
 	height: 100%;
+	// color: $off-black;
 }
 
 html {
@@ -28,10 +29,6 @@ a {
 p {
 	margin: 0;
 	margin-bottom: 1rem;
-}
-
-h1 {
-	font-size: $xl-size;
 }
 
 blockquote {

@@ -8,9 +8,9 @@
 	font-size: .8rem;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	min-width: 100vw;
-	max-height: 30px;
+	max-height: 160px;
 	padding: 1rem 2rem 1rem 2rem;
 	@media (min-width: 400px) {
 		flex-direction: row;
@@ -29,18 +29,37 @@
 		transform: skewY(1deg);
 		transform-origin: 100% 0;
 	}
+	img {
+		display: inline;
+		// max-height: 30px;
+		margin: 0;
+		padding: 4px;
+		max-width: 100px;
+		width: 100%;
+	}
 	span {
-		color: $primary-color;
-		font-weight: bold;
+		// color: white;
+	}
+	p {
+		margin: 0;
 	}
 }
 
+.credits {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	font-size: .6rem;
+	margin-right: .5rem;
+}
 .rss {
 	font-size: $s-size;
 	font-weight: bold;
 	color: white;
 	background-color: rgb(29, 29, 29);
 	box-shadow: none;
+	margin-left: 2rem;
 	&:hover {
 		color: $primary-color;
 	}
