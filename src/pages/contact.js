@@ -3,9 +3,10 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import contactStyles from './contact.module.scss';
 import { useForm } from 'react-hook-form';
-import Recaptcha from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || '6LdAE9wUAAAAAEQ8KqT20g_4E507K9s0m3AwPJvJ';
+console.log(RECAPTCHA_KEY);
 const encode = (data) => {
 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
 };
@@ -15,9 +16,9 @@ const ContactForm = () => {
 	const [ captcha, setCaptcha ] = useState(null);
 	const onSubmit = (data, e) => {
 		e.preventDefault();
-		const { name, email, text } = data;
-		//alert(JSON.stringify(myCaptcha));
-		console.log(JSON.stringify(captcha));
+		// const { name, email, text } = data;
+		//alert(JSON.stringify(captcha));
+		// console.log(JSON.stringify(captcha));
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -102,7 +103,7 @@ const ContactForm = () => {
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
 			{feedbackMsg && <h3>{feedbackMsg}</h3>}
-			<Recaptcha ref="recaptcha" onChange={handleCaptcha} sitekey={RECAPTCHA_KEY} />
+			<ReCAPTCHA onChange={handleCaptcha} sitekey={RECAPTCHA_KEY} />
 			<div className={contactStyles.submitContainer}>
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
