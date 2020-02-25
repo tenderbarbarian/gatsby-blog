@@ -89,11 +89,11 @@ module.exports = {
 						serialize: ({ query: { site, allContentfulBlogPost } }) => {
 							return allContentfulBlogPost.edges.map((edge) => {
 								return Object.assign({}, edge.node, {
-									description: edge.node.body.json, //<![CDATA[ [object Object] ]]>
+									// description: edge.node.body.json, //<![CDATA[ [object Object] ]]>
 									title: edge.node.title,
 									pubDate: edge.node.publishedDate, //Invalid Date
 									custom_elements: [
-										{ content: edge.node.body.json }, //empty
+										// { content: edge.node.body.json }, //empty
 										{ publishedDate: edge.node.publishedDate }
 									],
 									url: `${site.siteMetadata.siteUrl}/blog/${edge.node.slug}`

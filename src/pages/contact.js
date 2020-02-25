@@ -4,13 +4,15 @@ import Head from '../components/head';
 import contactStyles from './contact.module.scss';
 import { useForm } from 'react-hook-form';
 
+const encode = (data) => {
+	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+};
 const ContactForm = () => {
 	const { register, handleSubmit, errors } = useForm();
-
 	const onSubmit = (data, e) => {
 		const { name, email, text } = data;
+		alert(JSON.stringify(data));
 		console.log(JSON.stringify(data));
-		e.preventDefault();
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -21,14 +23,13 @@ const ContactForm = () => {
 			})
 		})
 			.then((response) => {
-				setFeedbackMsg(`Thanks for reaching out. I'll get back to you soon.`);
-				reset();
-				console.log(response);
+				alert('Success!');
+				alert(response);
 			})
 			.catch((error) => {
-				setFeedbackMsg('Oops, something went wrong. The form could not be submitted.');
-				console.log(error);
+				alert(error);
 			});
+		e.preventDefault();
 		// e.target.reset(); // reset after form submit
 	};
 
