@@ -18,7 +18,7 @@ const ContactForm = () => {
 
 	useEffect(
 		() => {
-			register({ name: 'g-recaptcha-response', required: 'Required' });
+			register({ required: true, name: 'g-recaptcha-response' });
 		},
 		[ register ]
 	);
@@ -26,10 +26,10 @@ const ContactForm = () => {
 		e.preventDefault();
 		// const { name, email, text, captcha } = data;
 		// alert(JSON.stringify(data));
-		// setCaptcha({ 'g-recaptcha-response': value });
 		const captchaValue = captchaRef.current.getValue();
-		console.log('On SUBMIT');
-		console.log(captchaValue);
+		console.log('On SUBMIT captchaVal (works!)' + captchaValue);
+		console.log(JSON.stringify(data));
+
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -114,15 +114,9 @@ const ContactForm = () => {
 				name="g-recaptcha-response"
 				sitekey={RECAPTCHA_KEY}
 				onChange={(val) => {
-					console.log('reCaptcha Change: ', val);
+					console.log('ReCAPTCHA onChange: ', val);
 					setValue('g-recaptcha-response', val);
-					console.log('ReCaptcha changed'); // gets called
-					handleSubmit((data) => {
-						console.log('handleSubmit'); // never called
-						console.log(data); //final data
-						/* fetch url then remove attribute */
-					})();
-					console.log('end'); //gets called
+					console.log('end');
 				}}
 			/>
 			<div className={contactStyles.submitContainer}>
