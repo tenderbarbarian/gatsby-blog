@@ -29,6 +29,17 @@
 	}
 }
 
+.sectionHeader-sm {
+	display: flex;
+	align-self: flex-end;
+	justify-content: flex-end;
+	// font-size: 2.25rem; // default for h1
+	font-size: 2.25rem;
+	@media (min-width: 450px) {
+		font-size: 4rem;
+	}
+}
+
 .linkButton {
 	outline: none;
 	border: 0 none;

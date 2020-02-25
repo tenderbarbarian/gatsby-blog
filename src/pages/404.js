@@ -7,7 +7,7 @@ import homeStyles from './home.module.scss';
 const NotFound = () => (
 	<Layout>
 		<Head title="404" />
-		<h1 className={homeStyles.sectionHeader}>Page not found</h1>
+		<h2 className={homeStyles.sectionHeader - sm}>Page not found</h2>
 		<p>
 			<Link to="/">Back to the home page</Link>
 		</p>

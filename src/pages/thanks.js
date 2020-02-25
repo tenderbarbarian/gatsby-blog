@@ -7,7 +7,7 @@ import homeStyles from './home.module.scss';
 const Thanks = () => (
 	<Layout>
 		<Head title="Thanks" />
-		<h1 className={homeStyles.sectionHeader}>Your form submission was recieved. Thank you!</h1>
+		<h2 className={homeStyles.sectionHeader - sm}>Your form submission was received. Thank you!</h2>
 		<p>
 			<Link to="/">Back to the home page</Link>
 		</p>

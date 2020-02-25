@@ -8,14 +8,33 @@ const ContactForm = () => {
 	const { register, handleSubmit, errors } = useForm();
 
 	const onSubmit = (data, e) => {
-		// const { name, email, text } = data;
-		// alert(JSON.stringify(data));
-		e.target.reset(); // reset after form submit
+		const { name, email, text } = data;
+		console.log(JSON.stringify(data));
+		e.preventDefault();
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encode({
+				// 'form-name': form.getAttribute('name'),
+				'form-name': 'contact',
+				...data
+			})
+		})
+			.then((response) => {
+				setFeedbackMsg(`Thanks for reaching out. I'll get back to you soon.`);
+				reset();
+				console.log(response);
+			})
+			.catch((error) => {
+				setFeedbackMsg('Oops, something went wrong. The form could not be submitted.');
+				console.log(error);
+			});
+		// e.target.reset(); // reset after form submit
 	};
 
 	return (
 		<form
-			// onSubmit={handleSubmit(onSubmit)}
+			onSubmit={handleSubmit(onSubmit)}
 			className={contactStyles.form}
 			name="contact"
 			method="post"
