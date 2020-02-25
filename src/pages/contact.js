@@ -3,9 +3,9 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import contactStyles from './contact.module.scss';
 import { useForm } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || '6LdAE9wUAAAAAEQ8KqT20g_4E507K9s0m3AwPJvJ';
+// const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || '6LdAE9wUAAAAAEQ8KqT20g_4E507K9s0m3AwPJvJ';
 //console.log(RECAPTCHA_KEY);
 const encode = (data) => {
 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
@@ -16,7 +16,7 @@ const ContactForm = () => {
 	// const [ captcha, setCaptcha ] = useState(null);
 	const onSubmit = (data, e) => {
 		e.preventDefault();
-		const { name, email, text, captcha } = data;
+		// const { name, email, text, captcha } = data;
 		// alert(JSON.stringify(captcha));
 		// console.log(JSON.stringify(captcha));
 		// setCaptcha({ 'g-recaptcha-response': value });
@@ -26,7 +26,7 @@ const ContactForm = () => {
 			body: encode({
 				// 'form-name': form.getAttribute('name'),
 				'form-name': 'contact',
-				'g-recaptcha-response': captcha,
+				// 'g-recaptcha-response': captcha,
 				...data
 			})
 		})
@@ -39,7 +39,6 @@ const ContactForm = () => {
 				setFeedbackMsg('Oops, something went wrong. The form could not be submitted.');
 				console.log(error);
 			});
-		// e.target.reset(); // reset after form submit
 	};
 	return (
 		<form
@@ -101,7 +100,7 @@ const ContactForm = () => {
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
 			{feedbackMsg && <h3>{feedbackMsg}</h3>}
-			<ReCAPTCHA ref={register({ required: 'Required' })} name="g-recaptcha-response" sitekey={RECAPTCHA_KEY} />
+			{/* <ReCAPTCHA ref={register({ required: 'Required' })} name="g-recaptcha-response" sitekey={RECAPTCHA_KEY} /> */}
 			<div className={contactStyles.submitContainer}>
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
