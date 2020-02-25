@@ -27,7 +27,7 @@ const ContactForm = () => {
 			.then((response) => {
 				console.log(response);
 				e.target.reset();
-				setFeedbackMsg(`Thanks for reaching out. I'll get back to you soon.`);
+				setFeedbackMsg(`Thanks for reaching out! I'll get back to you soon.`);
 			})
 			.catch((error) => {
 				setFeedbackMsg('Oops, something went wrong. The form could not be submitted.');
@@ -51,7 +51,7 @@ const ContactForm = () => {
 		>
 			<input type="hidden" name="bot-field" />
 			<input type="hidden" name="form-name" value="contact" />
-			{feedbackMsg && <span className={contactStyles.errorMessage}>{feedbackMsg}</span>}
+			{feedbackMsg && <h3>{feedbackMsg}</h3>}
 			<div className={contactStyles.formEntry}>
 				<input
 					type="text"

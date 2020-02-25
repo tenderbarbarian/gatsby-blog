@@ -108,9 +108,7 @@ module.exports = {
 										title
 										slug
 										publishedDate(formatString: "MMMM Do, YYYY")
-										body {
-											json
-										}
+									
 									}
 								}
 							}
