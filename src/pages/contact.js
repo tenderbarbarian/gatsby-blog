@@ -27,12 +27,15 @@ const ContactForm = () => {
 		// const { name, email, text, captcha } = data;
 		// alert(JSON.stringify(data));
 		// setCaptcha({ 'g-recaptcha-response': value });
+		const captchaValue = captchaRef.current.getValue();
+		console.log('On SUBMIT');
+		console.log(captchaValue);
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: encode({
 				'form-name': 'contact',
-				'g-recaptcha-response': captcha,
+				'g-recaptcha-response': captchaValue,
 				...data
 			})
 		})
