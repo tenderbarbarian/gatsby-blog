@@ -17,7 +17,7 @@ const ContactForm = () => {
 
 	useEffect(
 		() => {
-			register({ required: true, name: 'g-recaptcha-response' });
+			register({ required: 'Required', name: 'g-recaptcha-response' });
 		},
 		[ register ]
 	);
@@ -26,7 +26,6 @@ const ContactForm = () => {
 		const captchaValue = captchaRef.current.getValue();
 		console.log('On SUBMIT captchaVal (works!)' + captchaValue);
 		console.log(JSON.stringify(data));
-
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -108,12 +107,11 @@ const ContactForm = () => {
 			{feedbackMsg && <h3>{feedbackMsg}</h3>}
 			<ReCAPTCHA
 				name="g-recaptcha-response"
-				// ref={captchaRef}
-				ref={register({ required: 'Required' })}
+				ref={captchaRef}
 				sitekey={RECAPTCHA_KEY}
 				onChange={(val) => {
 					console.log('ReCAPTCHA onChange: ', val);
-					setValue('g-recaptcha-response', val);
+					setValue('g-recaptcha-response', val, true);
 					console.log('end');
 				}}
 			/>
