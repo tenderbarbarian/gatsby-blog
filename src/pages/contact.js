@@ -3,7 +3,9 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import contactStyles from './contact.module.scss';
 import { useForm } from 'react-hook-form';
+import Recaptcha from 'react-google-recaptcha';
 
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 const encode = (data) => {
 	return Object.keys(data).map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
 };
@@ -12,15 +14,16 @@ const ContactForm = () => {
 	const [ feedbackMsg, setFeedbackMsg ] = useState(null);
 	const onSubmit = (data, e) => {
 		e.preventDefault();
-		const { name, email, text } = data;
-		// alert(JSON.stringify(data));
-		// console.log(JSON.stringify(data));
+		const { name, email, text, myCaptcha } = data;
+		alert(JSON.stringify(myCaptcha));
+		console.log(JSON.stringify(data));
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: encode({
 				// 'form-name': form.getAttribute('name'),
 				'form-name': 'contact',
+				'g-recaptcha-response': myCaptcha,
 				...data
 			})
 		})
@@ -35,7 +38,9 @@ const ContactForm = () => {
 			});
 		// e.target.reset(); // reset after form submit
 	};
-
+	// const handleRecaptcha = (value) => {
+	// 	this.setState({ 'g-recaptcha-response': value });
+	// };
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
@@ -96,7 +101,7 @@ const ContactForm = () => {
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
 			{feedbackMsg && <h3>{feedbackMsg}</h3>}
-			<div data-netlify-recaptcha="true" />
+			<Recaptcha name="myCaptcha" ref={register({ required: 'Required' })} sitekey={RECAPTCHA_KEY} />
 			<div className={contactStyles.submitContainer}>
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
