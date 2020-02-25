@@ -16,7 +16,7 @@ const ContactForm = () => {
 	// const [ captcha, setCaptcha ] = useState(null);
 	const onSubmit = (data, e) => {
 		e.preventDefault();
-		// const { name, email, text } = data;
+		const { name, email, text, captcha } = data;
 		// alert(JSON.stringify(captcha));
 		// console.log(JSON.stringify(captcha));
 		// setCaptcha({ 'g-recaptcha-response': value });
@@ -26,7 +26,7 @@ const ContactForm = () => {
 			body: encode({
 				// 'form-name': form.getAttribute('name'),
 				'form-name': 'contact',
-				// 'g-recaptcha-response': captcha,
+				'g-recaptcha-response': captcha,
 				...data
 			})
 		})
