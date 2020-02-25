@@ -46,12 +46,11 @@ const ContactForm = () => {
 			netlify-honeypot="bot-field"
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
-			// data-netlify-recaptcha="true"
+			data-netlify-recaptcha="true"
 			action="/thanks"
 		>
 			<input type="hidden" name="bot-field" />
 			<input type="hidden" name="form-name" value="contact" />
-			{feedbackMsg && <h3>{feedbackMsg}</h3>}
 			<div className={contactStyles.formEntry}>
 				<input
 					type="text"
@@ -96,8 +95,9 @@ const ContactForm = () => {
 				/>
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
+			{feedbackMsg && <h3>{feedbackMsg}</h3>}
+			<div data-netlify-recaptcha="true" />
 			<div className={contactStyles.submitContainer}>
-				{/* <div data-netlify-recaptcha="true" /> */}
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
 				</button>
