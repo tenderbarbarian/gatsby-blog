@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import contactStyles from './contact.module.scss';
@@ -9,10 +9,12 @@ const encode = (data) => {
 };
 const ContactForm = () => {
 	const { register, handleSubmit, errors } = useForm();
+	const [ feedbackMsg, setFeedbackMsg ] = useState(null);
 	const onSubmit = (data, e) => {
+		e.preventDefault();
 		const { name, email, text } = data;
-		alert(JSON.stringify(data));
-		console.log(JSON.stringify(data));
+		// alert(JSON.stringify(data));
+		// console.log(JSON.stringify(data));
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -23,13 +25,15 @@ const ContactForm = () => {
 			})
 		})
 			.then((response) => {
-				alert('Success!');
-				alert(response);
+				console.log(response);
+				e.target.reset();
+				reset();
+				setFeedbackMsg(`Thanks for reaching out. I'll get back to you soon.`);
 			})
 			.catch((error) => {
-				alert(error);
+				setFeedbackMsg('Oops, something went wrong. The form could not be submitted.');
+				console.log(error);
 			});
-		e.preventDefault();
 		// e.target.reset(); // reset after form submit
 	};
 
@@ -43,12 +47,12 @@ const ContactForm = () => {
 			netlify-honeypot="bot-field"
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
-			data-netlify-recaptcha="true"
+			// data-netlify-recaptcha="true"
 			action="/thanks"
 		>
 			<input type="hidden" name="bot-field" />
 			<input type="hidden" name="form-name" value="contact" />
-			{errors.firstName && <span className={contactStyles.errorMessage}>First name is required</span>}
+			{feedbackMsg && <span className={contactStyles.errorMessage}>{feedbackMsg}</span>}
 			<div className={contactStyles.formEntry}>
 				<input
 					type="text"
@@ -94,7 +98,7 @@ const ContactForm = () => {
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
 			<div className={contactStyles.submitContainer}>
-				<div data-netlify-recaptcha="true" />
+				{/* <div data-netlify-recaptcha="true" /> */}
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
 				</button>
@@ -123,14 +127,4 @@ const ContactPage = () => (
 		</div>
 	</Layout>
 );
-
-// const ContactPage = () => (
-// 	<Layout>
-// 		<Head title="Contact" />
-// 		<div>
-// 			<h1 className={contactStyles.sectionHeader}>Hi!</h1>
-// 			<Example />
-// 		</div>
-// 	</Layout>
-// );
 export default ContactPage;
