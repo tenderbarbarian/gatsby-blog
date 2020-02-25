@@ -27,7 +27,6 @@ const ContactForm = () => {
 			.then((response) => {
 				console.log(response);
 				e.target.reset();
-				reset();
 				setFeedbackMsg(`Thanks for reaching out. I'll get back to you soon.`);
 			})
 			.catch((error) => {
