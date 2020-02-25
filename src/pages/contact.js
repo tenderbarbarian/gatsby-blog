@@ -50,7 +50,7 @@ const ContactForm = () => {
 			netlify-honeypot="bot-field"
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
-			data-netlify-recaptcha="true"
+			// data-netlify-recaptcha="true"
 			action="/thanks"
 		>
 			<input type="hidden" name="bot-field" />
