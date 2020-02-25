@@ -142,12 +142,11 @@ const ContactForm = () => {
 			{errors.name && <p>Required</p>}
 			<button>Submit</button>
 			<ReCaptcha
-				size="invisible"
 				badge="inline"
 				ref={captchaRef}
 				sitekey={testReCaptchaSiteKey}
 				onChange={(val) => {
-					//console.log("reCaptcha Change: ", val);
+					console.log('reCaptcha Change: ', val);
 					setValue('reCaptchaResponse', val);
 
 					console.log('ReCaptcha changed'); // gets called
@@ -155,7 +154,7 @@ const ContactForm = () => {
 					handleSubmit((data) => {
 						console.log('handleSubmit'); // never called
 						formElemRef.current.setAttribute('loading', true);
-						//console.log(data); //final data
+						console.log(data); //final data
 						/* fetch url then remove attribute */
 					})();
 					console.log('end'); //gets called
