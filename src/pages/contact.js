@@ -13,20 +13,20 @@ const encode = (data) => {
 const ContactForm = () => {
 	const { register, handleSubmit, errors } = useForm();
 	const [ feedbackMsg, setFeedbackMsg ] = useState(null);
-	const [ captcha, setCaptcha ] = useState(null);
+	// const [ captcha, setCaptcha ] = useState(null);
 	const onSubmit = (data, e) => {
 		e.preventDefault();
 		// const { name, email, text } = data;
 		// alert(JSON.stringify(captcha));
 		// console.log(JSON.stringify(captcha));
-		setCaptcha({ 'g-recaptcha-response': value });
+		// setCaptcha({ 'g-recaptcha-response': value });
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: encode({
 				// 'form-name': form.getAttribute('name'),
 				'form-name': 'contact',
-				'g-recaptcha-response': captcha,
+				// 'g-recaptcha-response': captcha,
 				...data
 			})
 		})
