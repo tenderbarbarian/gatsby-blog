@@ -9,13 +9,13 @@ const ContactForm = () => {
 
 	const onSubmit = (data, e) => {
 		// const { name, email, text } = data;
-		alert(JSON.stringify(data));
+		// alert(JSON.stringify(data));
 		e.target.reset(); // reset after form submit
 	};
 
 	return (
 		<form
-			onSubmit={handleSubmit(onSubmit)}
+			// onSubmit={handleSubmit(onSubmit)}
 			className={contactStyles.form}
 			name="contact"
 			method="post"
