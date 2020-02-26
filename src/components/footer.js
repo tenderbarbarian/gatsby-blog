@@ -20,8 +20,13 @@ const Footer = () => {
 				</span>
 				<p>
 					Developed by {data.site.siteMetadata.author}. Built with{' '}
-					<a href="https://facebook.github.io/react/">React</a> and{' '}
-					<a href="http://gatsbyjs.org/">Gatsby.js</a>
+					<a href="https://facebook.github.io/react/" target="_blank" rel="noopener noreferrer">
+						React
+					</a>{' '}
+					and{' '}
+					<a href="http://gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
+						Gatsby.js
+					</a>
 				</p>
 			</div>
 			<div>
