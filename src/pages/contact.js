@@ -27,6 +27,7 @@ const ContactForm = () => {
 		// console.log('On SUBMIT captchaVal (works!)' + captchaValue);
 		// console.log(JSON.stringify(data));
 		if (!captchaValue) {
+			console.log('CAPTCHA missing!');
 			setFeedbackMsg('Captcha is required');
 			return;
 		}
