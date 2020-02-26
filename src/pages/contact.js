@@ -115,9 +115,9 @@ const ContactForm = () => {
 				ref={captchaRef}
 				sitekey={RECAPTCHA_KEY}
 				onChange={(val) => {
-					console.log('ReCAPTCHA onChange: ', val);
+					// console.log('ReCAPTCHA onChange: ', val);
 					setValue('g-recaptcha-response', val, true);
-					console.log('end');
+					// console.log('end');
 				}}
 			/>
 			{/* <span className={contactStyles.errorMessage}>captcha required</span> */}
