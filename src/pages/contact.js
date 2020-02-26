@@ -24,8 +24,12 @@ const ContactForm = () => {
 	const onSubmit = (data, e) => {
 		e.preventDefault();
 		const captchaValue = captchaRef.current.getValue();
-		console.log('On SUBMIT captchaVal (works!)' + captchaValue);
-		console.log(JSON.stringify(data));
+		// console.log('On SUBMIT captchaVal (works!)' + captchaValue);
+		// console.log(JSON.stringify(data));
+		if (!captchaValue) {
+			setFeedbackMsg('Captcha is required');
+			return;
+		}
 		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -115,7 +119,7 @@ const ContactForm = () => {
 					console.log('end');
 				}}
 			/>
-			<span className={contactStyles.errorMessage}>captcha required</span>
+			{/* <span className={contactStyles.errorMessage}>captcha required</span> */}
 			<div className={contactStyles.submitContainer}>
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
