@@ -4,9 +4,13 @@
 	position: relative;
 	flex-grow: 1;
 	width: 100%;
-	padding: $s-size;
-	margin-top: 260px;
 	max-width: 850px;
+	margin-top: 170px;
+	padding: $s-size;
+	@media (min-width: 450px) {
+		padding: $s-size;
+		margin-top: 260px;
+	}
 	@media (min-width: 900px) {
 		margin-top: 110px;
 		padding: $s-size $m-size $l-size $m-size;
