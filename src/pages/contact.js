@@ -61,7 +61,6 @@ const ContactForm = () => {
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
 			data-netlify-recaptcha="true"
-			action="/thanks"
 		>
 			<input type="hidden" name="bot-field" />
 			<input type="hidden" name="form-name" value="contact" />
@@ -109,18 +108,18 @@ const ContactForm = () => {
 				/>
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
+			<ReCAPTCHA
+				name="g-recaptcha-response"
+				ref={captchaRef}
+				sitekey={RECAPTCHA_KEY}
+				onChange={(val) => {
+					// console.log('ReCAPTCHA onChange: ', val);
+					setValue('g-recaptcha-response', val, true);
+					// console.log('end');
+				}}
+			/>
+			{feedbackMsg && <h3>{feedbackMsg}</h3>}
 			<div className={contactStyles.submitContainer}>
-				<ReCAPTCHA
-					name="g-recaptcha-response"
-					ref={captchaRef}
-					sitekey={RECAPTCHA_KEY}
-					onChange={(val) => {
-						// console.log('ReCAPTCHA onChange: ', val);
-						setValue('g-recaptcha-response', val, true);
-						// console.log('end');
-					}}
-				/>
-				{feedbackMsg && <h3>{feedbackMsg}</h3>}
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
 				</button>
