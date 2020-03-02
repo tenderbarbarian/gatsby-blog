@@ -109,19 +109,18 @@ const ContactForm = () => {
 				/>
 			</div>
 			{errors.text && <span className={contactStyles.errorMessage}>please enter a message</span>}
-			{feedbackMsg && <h3>{feedbackMsg}</h3>}
-			<ReCAPTCHA
-				name="g-recaptcha-response"
-				ref={captchaRef}
-				sitekey={RECAPTCHA_KEY}
-				onChange={(val) => {
-					// console.log('ReCAPTCHA onChange: ', val);
-					setValue('g-recaptcha-response', val, true);
-					// console.log('end');
-				}}
-			/>
-			{/* <span className={contactStyles.errorMessage}>captcha required</span> */}
 			<div className={contactStyles.submitContainer}>
+				<ReCAPTCHA
+					name="g-recaptcha-response"
+					ref={captchaRef}
+					sitekey={RECAPTCHA_KEY}
+					onChange={(val) => {
+						// console.log('ReCAPTCHA onChange: ', val);
+						setValue('g-recaptcha-response', val, true);
+						// console.log('end');
+					}}
+				/>
+				{feedbackMsg && <h3>{feedbackMsg}</h3>}
 				<button className={contactStyles.linkButton} type="submit">
 					Send message
 				</button>
