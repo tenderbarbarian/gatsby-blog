@@ -50,7 +50,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-nprogress`,
 			options: {
-				color: `darkgreen`,
+				color: `black`,
 				showSpinner: false
 			}
 		},
@@ -60,8 +60,8 @@ module.exports = {
 				name: `Headless`,
 				short_name: `headless`,
 				start_url: `/`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
+				background_color: `#00ffc8`,
+				theme_color: `#e4fd05`,
 				display: `minimal-ui`,
 				icon: `src/images/favicon.png` // This path is relative to the root of the site.
 			}

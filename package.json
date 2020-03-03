@@ -1,7 +1,7 @@
 {
-	"name": "gatsby-starter-hello-world",
+	"name": "gatsby-headless-blog-with_contentful",
 	"private": true,
-	"description": "A simplified bare-bones starter for Gatsby",
+	"description": "Headless static Gatsby Blog with Contentful",
 	"version": "0.1.0",
 	"license": "MIT",
 	"scripts": {
