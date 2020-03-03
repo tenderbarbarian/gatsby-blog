@@ -54,14 +54,14 @@
 	text-decoration: none;
 	padding-top: 1rem;
 	font-size: 4rem;
-	top: 0%;
-	z-index: -100;
-	opacity: 0;
+	top: -200%;
 	@media (min-width: 450px) {
+		top: 0%;
 		z-index: 200;
 		opacity: 100%;
 	}
 	@media (min-width: 900px) {
+		top: 0%;
 		z-index: 200;
 		opacity: 100%;
 		padding: 0;
