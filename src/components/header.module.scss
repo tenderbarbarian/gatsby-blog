@@ -58,18 +58,15 @@
 	@media (min-width: 450px) {
 		top: 0%;
 		z-index: 200;
-		opacity: 100%;
 	}
 	@media (min-width: 900px) {
 		top: 0%;
 		z-index: 200;
-		opacity: 100%;
 		padding: 0;
 		font-size: 4rem;
 	}
 	@media (min-width: 1000px) {
 		z-index: 200;
-		opacity: 100%;
 		padding: 0;
 		top: -20%;
 		font-size: $l-size;
