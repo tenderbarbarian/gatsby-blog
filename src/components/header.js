@@ -19,8 +19,8 @@ const Header = () => {
 			<div className={headerStyles.headerBG} />
 			<h1>
 				<Link className={headerStyles.title} to="/">
-					{data.site.siteMetadata.title}
-					{/* Head<span>less</span> */}
+					{/* {data.site.siteMetadata.title} */}
+					Headless
 				</Link>
 			</h1>
 
