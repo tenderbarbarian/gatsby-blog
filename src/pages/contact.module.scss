@@ -7,9 +7,12 @@ $desktop-breakpoint: 640px;
 	display: flex;
 	flex-direction: column;
 	background-color: rgba(255, 255, 255, .15);
-	padding: $m-size;
+	padding: $m-size 0 0 0;
+	@media (min-width: 400px) {
+		padding: $m-size;
+	}
 	@media (min-width: 800px) {
-		padding: 0 $l-size 0 $l-size;
+		padding: 0 $l-size $m-size $l-size;
 	}
 	label {
 		// min-width: $form-indentation;
