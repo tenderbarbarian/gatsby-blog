@@ -4,7 +4,7 @@ module.exports = {
 		title: 'Headless',
 		author: 'Kasia Pohl',
 		description: 'Personal blog about meditation, mindfulness and habit creation',
-		siteUrl: 'http://localhost:8000/'
+		siteUrl: 'https://blog-headless.netlify.com/'
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -66,7 +66,6 @@ module.exports = {
 				icon: `src/images/favicon.png` // This path is relative to the root of the site.
 			}
 		},
-		`gatsby-plugin-offline`,
 		{
 			//RSS FEED https://www.gatsbyjs.org/packages/gatsby-plugin-feed/
 			//NOTE: This plugin only generates the xml file(s) when run in production mode! To test your feed, run: gatsby build && gatsby serve.
@@ -126,6 +125,7 @@ module.exports = {
 					}
 				]
 			}
-		}
+		},
+		`gatsby-plugin-offline`
 	]
 };
