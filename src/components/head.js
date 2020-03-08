@@ -15,19 +15,10 @@ const Head = ({ title }) => {
 		}
 	`);
 	return (
-		<Helmet
-			title={`${title} | ${data.site.siteMetadata.title}`}
-			meta={[
-				{
-					name: `author`,
-					content: data.site.siteMetadata.author
-				},
-				{
-					name: `description`,
-					content: data.site.siteMetadata.description
-				}
-			].concat(meta)}
-		/>
+		<Helmet title={`${title} | ${data.site.siteMetadata.title}`}>
+			<meta name="description" content={data.site.siteMetadata.description} />
+			<meta name="author" content={data.site.siteMetadata.author} />
+		</Helmet>
 	);
 };
 
